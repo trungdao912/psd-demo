@@ -1,0 +1,673 @@
+@font-face {
+    font-family: 'HelveticaNeue-Thin';
+    src: local('HelveticaNeue-Thin.otf'), url('HelveticaNeue-Thin.otf') format('opentype');
+}
+
+/* GENERAL RULES */
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'HelveticaNeue-Thin', sans-serif;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    height: auto;
+}
+
+.row {
+    max-width: 110rem;
+    margin: 0 auto; }
+    .row:not(:last-child) {
+      margin-bottom: 0rem; }
+    .row::after {
+      content: "";
+      display: table;
+      clear: both; }
+    .row [class^="col-"] {
+      float: left; }
+      .row [class^="col-"]:not(:last-child) {
+        margin-right: 6rem; }
+    .row .col-1-of-2 {
+      width: calc((100% - 3rem) / 2); }
+    .row .col-1-of-3 {
+      width: calc((100% - 2 * 6rem) / 3); }
+    .row .col-2-of-3 {
+      width: calc( ((100% - 2 * 6rem) / 3) * 2 + 6rem); }
+    .row .col-1-of-4 {
+      width: calc((100% - 3 * 6rem) / 4); }
+    .row .col-2-of-4 {
+      width: calc( ((100% - 3 * 6rem) / 4) * 2 + 6rem); }
+    .row .col-3-of-4 {
+      width: calc( ((100% - 3 * 6rem) / 4) * 3 + 2 * 6rem); }
+
+.clearfix::after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+p,
+ul li,
+ol li {
+    font-size: 1.6rem;
+    line-height: 2.3rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+.logo {
+    float: left;
+}
+
+.navbar {
+    float: right;
+}
+
+#hero {
+    background-image: url('../img/heropg.png'), linear-gradient(rgba(218, 51, 46, 1), rgba(218, 51, 46, 0.6));
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+h2 {
+    font-size: 5.2rem;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.nav li {
+    display: inline-block;
+}
+
+.nav li a {
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-left: 3rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 0.4rem solid white transparent;
+    transition: all 0.5s;
+}
+
+.nav li a:hover {
+    border-bottom: 0.4rem solid white
+}
+
+.icon {
+    font-size: 4rem;
+    color: #fff;
+    vertical-align: middle;
+    display: none;
+}
+
+#hero h2 {
+    color: white;
+    margin-bottom: 4rem;
+    margin-right: 9rem;
+}
+
+.cta {
+
+    width: 100%;
+    display: inline-block;
+    margin-top: 16rem;
+    position: relative;
+}
+
+.cta-info {
+    width: 50%;
+    float: left;
+    margin-top: 5rem;
+}
+
+.imgs {
+    width: 45%;
+    float: right;
+    /* position: absolute;
+    top: 0rem;
+    right: -10rem; */
+}
+
+.iphone {
+    margin-left: 3rem;
+    width: 100%;
+    position: relative;
+    margin-bottom: -24rem;
+}
+
+.hero-para {
+    font-size: 3.6rem;
+    color: white;
+    font-weight: 300;
+    line-height: 4.5rem;
+    margin-bottom: 7.5rem;
+}
+
+.cta-button {
+    border: 1px solid  rgb(40, 40, 40);
+    font-size: 1.8rem;
+    width: 50%;
+    padding: 1rem;
+    background-color: rgb(40, 40, 40);
+    color: white;
+    border-radius: 3rem;
+    padding: 1.5rem 2.5rem;
+    animation: moveInBottom .5s ease-out .75s;
+    animation-fill-mode: backwards;
+    position: relative;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+.cta-button::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .5s;
+    border-radius: 3rem;
+    background-color:rgb(40, 40, 40);
+}
+
+.cta-button:hover::after {
+    transform: scaleX(2);
+    transform: scaleY(1.5);
+    opacity: 0;
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(10rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.phone-icon {
+    width: 15%;
+    vertical-align: middle;
+    padding-right: 2rem;
+}
+
+.app-feature {
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+}
+
+.app-feature__heading {
+    font-size: 5.2rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: rgb(156,156,156);
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.app-feature__paragraph {
+    font-weight: 400;
+    color: rgb(75,75,75);
+    font-size: 2.2rem;
+    text-align: center;
+}
+
+.app-feature__image {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.app-feature__text {
+    color: black;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: bold;
+    margin-bottom: 4rem;
+}
+
+.info {
+    background-image: url(../img/nose.png);
+    background-position: center;
+    background-size: cover;
+    height: 85rem;
+}
+
+.info__cover {
+    padding-top: 20rem;
+    padding-bottom: 20rem;
+}
+
+.info__heading {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 5.2rem;
+    text-transform: uppercase;
+    color: rgb(253,107,99);
+    margin-bottom: 5.5rem;
+}
+
+.info__heading span {
+    color: white;
+}
+
+.info__paragraph {
+    font-size: 2.4rem;
+    color: rgb(75,75,75);
+    margin-bottom: 5.5rem;
+}
+
+.info__btn {
+    color: white;
+    background-color: rgb(231,76,60);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    width: 30%;
+    text-align: center;
+    border-radius: 20rem;
+    text-transform: uppercase;
+    padding: 2rem 0 2rem 0;
+    cursor: pointer;
+    animation: moveInBottom .5s ease-out .75s;
+    animation-fill-mode: backwards;
+}
+
+.footer {
+    background-color: rgb(46,46,56);
+    height: 61rem;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer__icon {
+    margin-bottom: 0;
+}
+
+.footer__icon > img {
+    padding-top: 12rem;
+    padding-bottom: 8rem;
+}
+
+.footer__content--index {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 3rem;
+}
+
+.footer__list img {
+    float: left;
+    margin-right: 2rem;
+}
+
+.footer__list div {
+    font-weight: 300;
+}
+
+.footer__content--paragraph {
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+.footer__content--paragraph {
+    letter-spacing: .1rem;
+}
+
+.footer__copyright {
+    font-size: 2.6rem;
+    padding: 4rem 0;
+}
+
+.copyright-container {
+    background-color: rgb(215,222,220);
+}
+
+ul {
+    list-style: none;
+}
+
+.js-wp-2 {
+    animation-duration: 3s;
+    animation-delay: 1s;
+}
+
+/* MEDIA QUERIES */
+
+/* Big tablet to 1200px */
+@media only screen and (max-width: 1200px) {
+    .cta-info {
+        width: 50%;
+        padding-left: 10rem;
+    }
+
+    .imgs img {
+        width: 90%;
+        margin-bottom: -75rem;
+    }
+
+    html {
+        font-size: 50%;
+    }
+
+    .cta-button {
+        font-size: 2rem;
+        margin-bottom: 5rem;
+        width: 60%;
+    }
+
+    .phone-icon {
+        width: 15%;
+    }
+
+    .logo-img {
+        margin-left: 10rem;
+    }
+}
+
+/* from 768 px to 1023px */
+@media only screen and (max-width: 1023px) {
+    html {
+        font-size: 30%;
+    }
+
+    .navbar {
+        padding-top: 8rem;
+        padding-right: 5rem;
+    }
+    
+    .navbar ul li a {
+        font-size: 2.5rem;
+    }
+
+    .logo-img {
+        width: 65%;
+        padding-top: 5rem;
+    }
+
+    .cta-button {
+        font-size: 2.5rem;
+        width: 55%;
+    }
+
+    .app-feature__image img {
+        width: 75%;
+    }
+
+    .app-feature__paragraph {
+        font-size: 2rem;
+    }
+
+    .footer__list li img {
+        width: 20%;
+    }
+
+    .footer__icon img {
+        width: 25%;
+    }
+
+}
+
+/* from 481px to 767px */
+@media only screen and (max-width: 767px) {
+
+    .cta {
+        margin-top: 5rem;
+    }
+
+    html {
+        font-size: 25%;
+    }
+
+    .logo-img {
+        width: 50%;
+    }
+    
+    .navbar {
+        padding: 0;
+        margin-top: 6rem;
+    }
+
+    .navbar .nav li a{
+        font-size: 2rem;
+    }
+
+    .cta-info {
+        margin-top: 1rem;
+    }
+    
+    .cta-info h2 {
+        margin-right: 0rem;
+        font-size: 7rem;
+    }
+
+    .cta-button {
+        font-size: 2rem;
+        width: 70%;
+        margin-top: -4rem;
+
+    }    
+
+    .phone-icon {
+        width: 19%;
+    }
+
+    .imgs .iphone {
+        width: 80%;
+        margin-bottom: 0rem;
+        padding-right: 0rem;
+    }
+
+    .container {
+        height: auto;
+    }
+
+    .hero-para {
+        font-size: 3.5rem;
+        margin-top: -2rem;
+    }
+
+    .app-feature .row .col-1-of-3 {
+        width: 100%;
+    }
+
+    .app-feature__image {
+        width: 55%;
+        margin: 0 auto;
+    }
+
+    .app-feature__heading {
+        font-size: 7rem;
+    }
+
+    .app-feature__paragraph p {
+        font-size: 3.6rem;
+    }
+
+    .app-feature__paragraph {
+        font-size: 3.6rem;
+    }
+
+    .app-feature__text {
+        margin-top: 2rem;
+        font-size: 6rem;
+    }
+
+    .info__cover {
+        padding-left: 8rem;
+    }
+
+    .info .row .col-1-of-2 {
+        width: 60%;
+    }
+
+    .info__heading {
+        font-size: 7rem;
+    }
+
+    .info__paragraph {
+        font-size: 3.6rem;
+    }
+
+    .info__btn {
+        width: 50%;
+        font-size: 3rem;
+    }
+
+    .footer__icon {
+        padding-left: 8rem;
+    }
+
+    .footer__content {
+        padding: 0 8rem 0 8rem;
+    }
+
+    .footer__content--index {
+        font-size: 3rem;
+    }
+
+    .footer__list li div {
+        font-size: 2rem;
+    }
+
+    .footer__list li img {
+        width: 25%;
+    }
+
+    .footer__copyright {
+        padding-left: 8rem;
+    }
+
+    .footer__copyright div {
+        font-size: 4rem;
+    }
+
+    .footer__content--paragraph {
+        font-size: 2.5rem;
+    }
+}
+
+@media only screen and (max-width: 528px) {
+    .navbar {
+        margin-top: -5rem;
+    }
+}
+
+/* from 0 to 480px */
+@media only screen and (max-width: 480px) {
+
+    .logo-img {
+        width: 45%;
+    }
+
+    .footer__content--paragraph {
+        font-size: 2.3rem;
+    }
+
+    .nav {
+        display: none;
+    }
+    .icon {
+        display: inline-block;
+        font-size: 10rem;
+        margin-top: 9rem;
+        margin-right: 7rem;
+        cursor: pointer;
+    }
+
+    .cta-info {
+        display: block;
+        float: none;
+        width: 100%;
+        margin-top: 5rem;
+    }
+
+    .cta-info h2 {
+        font-size: 10rem;
+    }
+
+    .cta-info .hero-para {
+        font-size: 5rem;
+    }
+
+    .cta-button {
+        width: 75%;
+        font-size: 3.5rem;
+    }
+
+    .cta-button .phone-icon {
+        width: 15%;
+    }
+    
+    .info__cover {
+        height: auto !important;
+    }
+
+    .info {
+        height: auto !important;
+    }
+
+    .info__heading {
+        font-size: 10rem;
+    }
+
+    .info__paragraph {
+        font-size: 7rem;
+    }
+
+    .info__btn {
+        width: 80%;
+        font-size: 5rem;
+    }
+
+    .imgs {
+        float: none;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .imgs .iphone {
+        width: 78%;
+        padding-left: 10rem;
+    }
+    
+    .container {
+        height: auto !important;
+    }
+
+    .footer__copyright {
+        display: block;
+    }
+
+    .footer {
+        height: auto !important;
+    }
+}
